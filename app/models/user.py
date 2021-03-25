@@ -8,8 +8,15 @@ class User(db.Model):
     name = db.Column(db.String(30), unique=True, nullable=False)
     city_id = db.Column(db.Integer, db.ForeignKey('cities.id'))
     messages = db.relationship('Message', backref='user')
+
     def __repr__(self):
         return 'id=%r, User_name=%r' % (self.id, self.name)
 
+
+
+    def register(self) -> None:
+        """register"""
+        db.session.add(self)
+        db.session.commit()
 
 

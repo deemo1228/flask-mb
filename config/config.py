@@ -18,16 +18,19 @@ class BaseConfig:  # 基本配置
     SECRET_KEY = 'THIS IS MAX'
     PERMANENT_SESSION_LIFETIME = datetime.timedelta(days=14)
 
+
 class DevelopmentConfig(BaseConfig):
     DEBUG = False
     # 設置資料庫地址以及相關配置
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:redd00r@192.168.112.141:3306/crud_mb'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:redd00r@192.168.112.142:3306/crud_mb'
+
 
 class TestingConfig(BaseConfig):
     TESTING = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = create_sqlite_uri("test.db")
+
 
 config = {
     'development': DevelopmentConfig,

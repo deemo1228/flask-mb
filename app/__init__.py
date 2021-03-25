@@ -1,20 +1,17 @@
 # 導入相對應的套件
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from config.config import config
+# from flask_marshmallow import Marshmallow
 
 
 
 db = SQLAlchemy()
+# ma = Marshmallow()
 # db.init_app(app)
 # migrate = Migrate(app, db)
 # seeder = FlaskSeeder()
 # seeder.init_app(app, db)
-
-
-
-
-
 
 def create_app(config_name):
 
